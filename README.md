@@ -1,22 +1,22 @@
 # Task Management API
 
-This is a simple Task Management API built with Node.js, Express, and an in-memory array for data storage. It allows you to create and delete tasks.
+This is a simple Task Management API built with Node.js, Express, and an in-memory array for data storage.
 
 ## Features
-
-- Create a new task
+- Get all tasks
+- add a new task
 - Delete an existing task
 
 ## Requirements
 
-- Node.js (version 12 or higher)
-- npm (version 6 or higher)
+- Node.js
+- npm 
 
 ## Installation
 
 1. Clone the repository:
    
-    git clone https://github.com/yourusername/task-management-api.git
+    git clone https://github.com/Touqeer001/Nodejs-task-assignment.git
    
 
 2. Install the dependencies:
@@ -31,13 +31,32 @@ This is a simple Task Management API built with Node.js, Express, and an in-memo
     npm start
     ```
 
-2. The server will run on `http://localhost:5000`.
+2. The server will run on `http://localhost:8080`.
 
 ## API Endpoints
 
-### Create a Task
+### Get All Tasks
 
-- **URL:** `/api/v1/task/create`
+- **URL:** `/api/v1/task/get-task`
+- **Method:** `GET`
+- **Response:**
+    ```json
+    {
+        "success": true,
+        "tasks": [
+            {
+                "id": 1,
+                "title": "Task Title",
+                "description": "This is a description for task 1",
+                "status": "pending"
+            }
+        ]
+    }
+    ```
+
+### add a Task
+
+- **URL:** `/api/v1/task/add-task`
 - **Method:** `POST`
 - **Request Body:**
     ```json
@@ -77,5 +96,12 @@ This is a simple Task Management API built with Node.js, Express, and an in-memo
     }
     ```
 
-## Project Structure
+### `controllers/taskController.js`
+Contains the logic for handling task adding , and deletion.
+
+### `data/tasks.js`
+Provides an in-memory array to store tasks.
+
+### `routes/taskRoutes.js`
+Defines the API routes for task-related operations.
 
