@@ -1,6 +1,6 @@
 # Task Management API
 
-This is a simple Task Management API built with Node.js, Express, and an in-memory array for data storage.
+This is a simple Task Management API built with Node.js, Express, and an in-memory array for data storage. It follows the MVC (Model-View-Controller) pattern and allows you to create, read, and delete tasks.Testing with Postman.
 
 ## Features
 - Get all tasks
